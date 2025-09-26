@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h2> Inscribir Estudiante </h2>
+    <a href="{% url 'USUARIOS:crear' %}" class="btn btn-primary mb-3">Agregar Estudiante</a>
+    <br><br>
+    <h2>Lista de estudiantes</h2>
+     <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Grado</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Ciudad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudiante in estudiantes %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ estudiante.nombre }}</td>
+                <td>{{ estudiante.apellido }}</td>
+                <td>{{ estudiante.edad|default:"-" }}</td>
+                <td>{{ estudiante.grado|default:"-" }}</td>
+                <td>{{ estudiante.email }}</td>
+                <td>{{ estudiante.telefono|default:"-" }}</td>
+                <td>{{ estudiante.ciudad|default:"-" }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="8">No hay estudiantes registrados.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+{% endblock %}
+
+

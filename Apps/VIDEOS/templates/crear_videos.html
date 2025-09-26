@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h2>Agregar Video</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    <a href="{% url 'VIDEOS:videosapp' %}" class="btn btn-secondary mt-2">Volver a la lista</a>
+{% endblock %}

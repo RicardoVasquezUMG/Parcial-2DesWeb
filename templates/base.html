@@ -53,15 +53,7 @@
             <h1 class="sitename">UMG Web</h1>
         </a>
 
-          <!-- Search -->
-          <form class="search-form desktop-search-form">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for products">
-              <button class="btn" type="submit">
-                <i class="bi bi-search"></i>
-              </button>
-            </div>
-          </form>
+          
 
           <!-- Actions -->
           <div class="header-actions d-flex align-items-center justify-content-end">
@@ -78,22 +70,15 @@
               </button>
               <div class="dropdown-menu">
                 <div class="dropdown-header">
-                  <h6>Welcome to <span class="sitename">FashionStore</span></h6>
-                  <p class="mb-0">Access account &amp; manage orders</p>
+                  <h6>Bienvenido a <span class="sitename">UMG WEB</span></h6>
+                  <p class="mb-0">Access account</p>
                 </div>
                 <div class="dropdown-body">
                   <a class="dropdown-item d-flex align-items-center" href="account.html">
                     <i class="bi bi-person-circle me-2"></i>
                     <span>My Profile</span>
                   </a>
-                  <a class="dropdown-item d-flex align-items-center" href="account.html">
-                    <i class="bi bi-bag-check me-2"></i>
-                    <span>My Orders</span>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="account.html">
-                    <i class="bi bi-heart me-2"></i>
-                    <span>My Wishlist</span>
-                  </a>
+                  
                   <a class="dropdown-item d-flex align-items-center" href="account.html">
                     <i class="bi bi-gear me-2"></i>
                     <span>Settings</span>
@@ -104,19 +89,7 @@
                   <a href="login.html" class="btn btn-outline-primary w-100">Register</a>
                 </div>
               </div>
-            </div>
-
-            <!-- Wishlist -->
-            <a href="account.html" class="header-action-btn d-none d-md-block">
-              <i class="bi bi-heart"></i>
-              <span class="badge">0</span>
-            </a>
-
-            <!-- Cart -->
-            <a href="cart.html" class="header-action-btn">
-              <i class="bi bi-cart3"></i>
-              <span class="badge">3</span>
-            </a>
+            </div>            
             
             <img src="{% static 'Logo UMG.jpg' %}" width="75px"> 
             <!-- Mobile Navigation Toggle -->
@@ -132,29 +105,15 @@
       <div class="container-fluid container-xl position-relative">
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="{% url 'HOME:homeapp' %}">Home</a></li>
-            <li><a href="#">Estudiantes</a></li>   
-            <li><a href="#">Administradores</a></li>
-            <li><a href="#">Publicaciones</a></li>
-            <li><a href="#">Acerca de</a></li>
+            <li><a href={% url 'HOME:homeapp' %}>Acerca</a></li>
+            <li><a href={% url 'USUARIOS:usuariosapp' %}>Usuarios</a></li>   
+            <li><a href={% url 'VIDEOS:videosapp' %}>Videos</a></li>
           </ul>
         </nav>
       </div>
     </div>
 
-    <!-- Mobile Search Form -->
-    <div class="collapse" id="mobileSearch">
-      <div class="container">
-        <form class="search-form">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for products">
-            <button class="btn" type="submit">
-              <i class="bi bi-search"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+    
 
   </header>
 
